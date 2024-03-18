@@ -1,5 +1,10 @@
 FROM python:3.8
 
-ADD main.py /
+RUN pip3 install flask flask_restful
 
-CMD [ "python", "./main.py" ]
+WORKDIR /app
+
+COPY hello-virtualization.py /app
+
+
+CMD ["python3", "hello-virtualization.py"]
